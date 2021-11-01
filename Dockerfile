@@ -1,7 +1,6 @@
-FROM golang:1.16
+FROM golang:1.16-alpine 
 
-RUN apt-get update
-RUN apt-get install -y libvips libvips-dev gcc musl-dev git bash
-RUN go get github.com/codegangsta/gin
+RUN apk update && apk add --no-cache vips-dev 
+
 
 
